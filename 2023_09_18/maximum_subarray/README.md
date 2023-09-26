@@ -6,8 +6,14 @@ At each index, the algorithm compares the current element with the maximum sum e
 
 The algorithm also keeps track of the maximum sum seen so far, which is the maximum of all the maximum sums ending at each index. The final result is the maximum sum seen so far.
 
+### Complexity
 
-### Coding
+- **Time Complexity:** `O(n)` `
+- **Space Complexity:** `O(1)`
+
+---
+
+### Solution in Rust
 ```rust
 fn max_sub_array(nums: &[i32]) -> i32 {
     let mut max_ending_here = nums[0];

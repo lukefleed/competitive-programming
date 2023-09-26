@@ -17,6 +17,6 @@ fn max_sub_array(nums: &[i32]) -> i32 {
 
 fn main() {
     let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-    let res = maxSubArray(&nums);
+    let res = max_sub_array(&nums);
     println!("{}", res);
 }

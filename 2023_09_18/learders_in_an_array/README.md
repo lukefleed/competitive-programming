@@ -11,7 +11,7 @@ So after we have iterated through all the array, we can reverse the list and ret
 
 ---
 
-### Rust solution
+### Solution in Rust
 
 ```rust
 fn leaders_in_an_array(arr: &[i32]) -> Vec<i32> {
