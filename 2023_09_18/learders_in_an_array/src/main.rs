@@ -1,6 +1,5 @@
 // Given an array A of positive integers. Your task is to find the leaders in the array. An element of array is leader if it is greater than or equal to all the elements to its right side. The rightmost element is always a leader.
 
-// Declare a function that takes a slice of i32 as input and returns a Vec<i32>
 fn leaders_in_an_array(arr: &[i32]) -> Vec<i32> {
     // Empty vector to store the leaders
     let mut leaders = Vec::new();
@@ -13,6 +12,7 @@ fn leaders_in_an_array(arr: &[i32]) -> Vec<i32> {
         if arr[i] > max {
             // Set the max value to the current element
             max = arr[i];
+            // Add the max value to the leaders vector
             leaders.push(max);
         }
     }
