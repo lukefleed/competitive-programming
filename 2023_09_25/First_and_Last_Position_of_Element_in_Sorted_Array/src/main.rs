@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 struct Solution {}
 
 impl Solution {
@@ -11,16 +13,16 @@ impl Solution {
 
         while l <= r {
             let m = l + (r - l) / 2; // m = middle for the binary search
-            if target > nums[m as usize] {
-                l = m + 1;
-            } else if target < nums[m as usize] {
-                r = m - 1;
-            } else {
-                i = m;
-                if left_bias {
-                    r = m - 1;
-                } else {
-                    l = m + 1;
+            match target.cmp(&nums[m as usize]) {
+                Ordering::Less => r = m - 1,
+                Ordering::Greater => l = m + 1,
+                Ordering::Equal => {
+                    i = m;
+                    if left_bias {
+                        r = m - 1;
+                    } else {
+                        l = m + 1;
+                    }
                 }
             }
         }
