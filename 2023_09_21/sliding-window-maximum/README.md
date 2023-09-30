@@ -1,3 +1,5 @@
+> Problem: [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+
 # Comments on the solution
 
 The problem is to find the maximum value in a sliding window of size `k` over a given array of integers. We can solve this problem using a double-ended queue (deque) to store the indices of the elements in the sliding window. The deque will always store the indices of the elements in decreasing order of their values, with the maximum value at the front of the deque.
