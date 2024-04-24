@@ -24,17 +24,14 @@ fn trap(height: Vec<i32>) -> i32 {
     let mut res = 0;
 
     while l < r {
-        match l_max.cmp(&r_max) {
-            Ordering::Less => {
-                l += 1;
-                l_max = std::cmp::max(l_max, height[l]);
-                res += l_max - height[l];
-            },
-            _ => {
-                r -= 1;
-                r_max = std::cmp::max(r_max, height[r]);
-                res += r_max - height[r];
-            }
+        if l_max < r_max {
+            l += 1;
+            l_max = std::cmp::max(l_max, height[l]);
+            res += l_max - height[l];
+        } else {
+            r -= 1;
+            r_max = std::cmp::max(r_max, height[r]);
+            res += r_max - height[r];
         }
     }
     res

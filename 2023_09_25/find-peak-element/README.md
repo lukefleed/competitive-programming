@@ -2,7 +2,7 @@
 
 # Comments on the solution
 
-We can use two different approach, that are theorethically equivalent in terms of space complexity, but in the reality the second one is more efficient, as we can see in the leetcode results
+We can use two different approach, that are asymptotically equivalent in terms of space complexity, but in the reality the second one is more efficient, as we can see in the leetcode results
 
 ## First approach
 
@@ -23,6 +23,10 @@ fn find_peak_element(nums: Vec<i32>) -> i32 {
 ```
 
 In this case we are doing a simple binary search where we are just checking if the next element is bigger then the middle. If it is bigger, we can discard the left part of the array, otherwise we can discard the right part of the array. In this way we are sure that we will find a peak, as we are always moving towards the direction of the peak. The only case where we can have a problem is when we are in the peak, but in this case we will just return the left index, as it will be equal to the right index.
+
+Note that it's important that $\forall i$ `nums[i] != nums[i+1]` because otherwise we can have a problem in the algorithm. This is specified in the problem statement at the end of the description
+
+Also note that `nums[-1] = nums[n] = -∞`. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.
 
 ![](https://i.imgur.com/GBiAC3c.png)
 
